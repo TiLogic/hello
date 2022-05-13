@@ -1,6 +1,6 @@
-(ns hello.testing
+(ns hello.hello-test
   (:require [cljd.test :refer [deftest testing is]]))
 
-(deftest testing-test
+(deftest hello-test
   (testing "...testing... 1 2 3"
     (is (= 1 1))))

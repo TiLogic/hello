@@ -1,5 +1,4 @@
-(ns hello.main
-  (:require [hello.testing :as t]))
+(ns hello.main)
 
 (defn main []
   (dart:core/print "hello"))
