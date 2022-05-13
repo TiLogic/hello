@@ -3,7 +3,16 @@
 ## Setup
 
 * create simple flutter project using `https://github.com/Tensegritics/ClojureDart/blob/main/doc/flutter-quick-start.md`
-* add a simple test file
+* add a test file
+* remove the following from `pubspec.yaml`
+
+```
+flutter_test:
+    sdk: flutter
+```
+
+* run `flutter pub add test --dev`
+* run `clj -M -m cljd.build flutter`
 
 ## Discoveries so far...
 
@@ -202,7 +211,7 @@ Could not find a file named "pubspec.yaml" in "/Users/user/.pub-cache/hosted/pub
 ```
 
 5. Adding `_fe_analyzer_shared: 38.0.0` to the flutter `pubspec.yaml` and running `flutter pub get` still yields `"/Users/user/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-38.0.0"` because the dependency is added to flutter but not dart.
-6. Creating a simple dart project using `https://github.com/Tensegritics/ClojureDart/blob/main/doc/quick-start.md` and adding `_fe_analyzer_shared` to it's `pubspec.yaml` allows `dart test` to find the dependency. However re-running `dart test` in flutter results in another `Could not find a file named "pubspec.yaml"...` error.
+6. Creating a simple dart project using `https://github.com/Tensegritics/ClojureDart/blob/main/doc/quick-start.md` and adding `_fe_analyzer_shared` to it's `pubspec.yaml` allows `dart test` to find the dependency. However re-running `dart test` in the project directory results in another `Could not find a file named "pubspec.yaml"...` error.
 7. Repeating `6` for each missing dependency and then running `dart test` results in:
 
 ```
