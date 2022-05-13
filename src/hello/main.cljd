@@ -1,5 +1,5 @@
 (ns hello.main
-  (:require [cljd.test :refer [deftest testing is]]))
+  (:require [hello.testing :as t]))
 
 (defn main []
   (dart:core/print "hello"))
